@@ -7,13 +7,11 @@ const deleteUserServices = async (id: string): Promise<object> => {
 
 	const user = await userRepository.findOneBy({ id: id });
 
-	if (user.isActive === false) {
-		throw new AppError({ message: "User already deleted" }, 400);
+	if (!user) {
+		throw new AppError("User not found", 404);
 	}
 
-	user.isActive = false;
-
-	await userRepository.save(user);
+	await userRepository.delete(id);
 
 	return {};
 };

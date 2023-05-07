@@ -9,7 +9,6 @@ import {
 	validateSchemaMiddleware,
 	verifyIfUserAlreadyExistsMiddleware,
 	verifyTokenMiddleware,
-	verifyUserAdminMiddleware,
 	verifyIfUserExistsMiddleware,
 	verifyForbiddenFieldsMiddleware,
 } from "../middlewares";
@@ -17,12 +16,7 @@ import { createUserSchema } from "../schemas";
 
 const userRouter = Router();
 
-userRouter.get(
-	"",
-	verifyTokenMiddleware,
-	verifyUserAdminMiddleware,
-	getAllUsersController
-);
+userRouter.get("", verifyTokenMiddleware, getAllUsersController);
 
 userRouter.post(
 	"",
@@ -34,7 +28,6 @@ userRouter.post(
 userRouter.delete(
 	"/:id",
 	verifyTokenMiddleware,
-	verifyUserAdminMiddleware,
 	verifyIfUserExistsMiddleware,
 	deleteUserController
 );

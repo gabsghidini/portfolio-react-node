@@ -3,10 +3,7 @@ import { User } from "../../entities/users";
 import { returnUpdatedUserSchema } from "../../schemas";
 import * as i from "../../interfaces/users";
 
-const patchUserServices = async (
-	id: string,
-	payload
-): Promise<i.ReturnUser> => {
+const patchUserServices = async (id: string, payload): Promise<any> => {
 	const userRepository = AppDataSource.getRepository(User);
 
 	const user = await userRepository.findOneBy({ id: id });

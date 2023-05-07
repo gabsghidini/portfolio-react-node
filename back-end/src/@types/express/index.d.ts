@@ -12,11 +12,9 @@ export {};
 
 export interface iUser {
 	id: string;
-	name: string;
+	fullName: string;
 	email: string;
 	password: string;
-	isAdm: boolean;
-	isActive: boolean;
 	createdAt: Date;
 	updatedAt: Date;
 }

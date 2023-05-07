@@ -8,7 +8,7 @@ import {
 	OneToMany,
 } from "typeorm";
 import { hashSync } from "bcryptjs";
-import Contact from "./contacts";
+import { Contact } from "./contacts";
 
 @Entity("users")
 export class User {

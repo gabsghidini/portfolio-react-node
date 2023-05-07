@@ -8,7 +8,7 @@ import {
 import { User } from "./users";
 
 @Entity("contacts")
-class Contact {
+export class Contact {
 	@PrimaryGeneratedColumn("uuid")
 	id: string;
 
@@ -27,5 +27,3 @@ class Contact {
 	@ManyToOne(() => User)
 	user: User;
 }
-
-export default Contact;

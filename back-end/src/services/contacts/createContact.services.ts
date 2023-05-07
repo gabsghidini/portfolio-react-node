@@ -1,5 +1,5 @@
 import AppDataSource from "../../data-source";
-import Contact from "../../entities/contacts";
+import { Contact } from "../../entities/contacts";
 import { User } from "../../entities/users";
 
 const createContactService = async (contactData: Contact, userData: User) => {
