@@ -3,11 +3,10 @@ import * as yup from "yup";
 export const createUserSchema = yup
 	.object()
 	.shape({
-		name: yup.string().required(),
-		email: yup.string().email().required(),
+		fullName: yup.string().required(),
+		email: yup.string().required(),
 		password: yup.string().required(),
-		isAdm: yup.boolean().required(),
-		isActive: yup.boolean(),
+		phone: yup.string().required(),
 	})
 	.noUnknown(true)
 	.strict();
